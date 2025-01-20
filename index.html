@@ -172,6 +172,13 @@
             drop.style.animationDuration = Math.random() * 2 + 1.5 + 's';
             rain.appendChild(drop);
         }
+
+        // Audio setup with lower volume
+        const audio = new Audio('https://raw.githubusercontent.com/CainRg0/CainWeb/main/Air%20on%20IV%20string.mp3');
+        audio.volume = 0.5; // Set volume to 50%
+        document.body.addEventListener('click', () => {
+            audio.play().catch(error => console.error('Audio play failed:', error));
+        });
     </script>
 
     <!-- New Section for Name and Iconic Phrase -->
@@ -179,12 +186,6 @@
         <h2>Cain</h2>
         <h3>Nothing is Real, Everything is Lecit</h3>
     </div>
-
-    <!-- Audio Player Section -->
-    <audio autoplay loop>
-        <source src="https://raw.githubusercontent.com/CainRg0/CainWeb/main/Air%20on%20IV%20string.mp3" type="audio/mpeg">
-        Il tuo browser non supporta l'elemento audio.
-    </audio>
 
     <!-- Existing Profile Section -->
     <div class="container">
