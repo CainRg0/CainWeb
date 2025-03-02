@@ -14,9 +14,9 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      /* height: 100vh;  <-- se vuoi che il contenuto non superi mai l'altezza del viewport, lascialo pure */
       color: white;
-      overflow: hidden;
+      /* overflow: hidden; <-- RIMOSSO per consentire lo scroll su schermi più piccoli */
       background: black;
       position: relative;
     }
@@ -38,9 +38,10 @@
       border-radius: 10px;
       background: rgba(0, 0, 0, 0.8);
     }
-    
+
+    /* Margine ridotto da 40px a 20px */
     .name-container {
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
 
     h1 { font-size: 2.5em; }
@@ -98,60 +99,60 @@
     let stars = [];
 
     function createStars(count) {
-        for (let i = 0; i < count; i++) {
-            stars.push({
-                x: Math.random() * canvas.width - canvas.width / 2,
-                y: Math.random() * canvas.height - canvas.height / 2,
-                z: Math.random() * canvas.width,
-                size: Math.random() * 0.7 + 0.3, // DIMENSIONE ANCORA PIÃ™ PICCOLA
-                speed: Math.random() * 1.5 + 0.5, // Stelle piÃ¹ vicine si muovono piÃ¹ veloci
-                opacity: Math.random() * 0.8 + 0.2 // Alcune stelle piÃ¹ deboli
-            });
-        }
+      for (let i = 0; i < count; i++) {
+        stars.push({
+          x: Math.random() * canvas.width - canvas.width / 2,
+          y: Math.random() * canvas.height - canvas.height / 2,
+          z: Math.random() * canvas.width,
+          size: Math.random() * 0.7 + 0.3,
+          speed: Math.random() * 1.5 + 0.5,
+          opacity: Math.random() * 0.8 + 0.2
+        });
+      }
     }
 
     function updateStars() {
-        for (let star of stars) {
-            star.z -= star.speed; // MOVIMENTO SCALATO PER MAGGIORE REALISMO
-            if (star.z <= 0) {
-                star.x = Math.random() * canvas.width - canvas.width / 2;
-                star.y = Math.random() * canvas.height - canvas.height / 2;
-                star.z = canvas.width;
-            }
+      for (let star of stars) {
+        star.z -= star.speed;
+        if (star.z <= 0) {
+          star.x = Math.random() * canvas.width - canvas.width / 2;
+          star.y = Math.random() * canvas.height - canvas.height / 2;
+          star.z = canvas.width;
         }
+      }
     }
 
     function drawStars() {
-        ctx.fillStyle = "black";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "black";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        for (let star of stars) {
-            let scale = canvas.width / star.z;
-            let x = star.x * scale + canvas.width / 2;
-            let y = star.y * scale + canvas.height / 2;
-            let size = star.size * scale;
+      for (let star of stars) {
+        let scale = canvas.width / star.z;
+        let x = star.x * scale + canvas.width / 2;
+        let y = star.y * scale + canvas.height / 2;
+        let size = star.size * scale;
 
-            ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
-            ctx.beginPath();
-            ctx.arc(x, y, size, 0, Math.PI * 2);
-            ctx.fill();
-        }
+        ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, Math.PI * 2);
+        ctx.fill();
+      }
     }
 
     function animate() {
-        updateStars();
-        drawStars();
-        requestAnimationFrame(animate);
+      updateStars();
+      drawStars();
+      requestAnimationFrame(animate);
     }
 
-    createStars(500); // Aumentato il numero per un effetto piÃ¹ denso
+    createStars(500);
     animate();
 
     window.addEventListener("resize", () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        stars = [];
-        createStars(500);
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      stars = [];
+      createStars(500);
     });
   </script>
 </body>
