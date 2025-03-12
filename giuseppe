@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset = "UTF-8">
+		<meta name="author" content="Di Mauro Giuseppe">
+		<meta name="description" content="A Story about a Strange Noise in the Night">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>The Strange Noise in the Night</title>
+	</head>
+
+	<body>
+		<hr>
+		<h1>"The Strange Noise in the Night"</h1>
+		<hr>
+		<p><i>
+			It was a calm and stormy night at the Hotel Elegance, rich but slightly old-fashioned estabilishment known for its sophisticated charm.
+			The fifth floor, however, had a reputation among guests for being oddly quiet, with creaky floors and faint drafts that
+			could unsettle even the most brave travelers.
+		</i></p>
+		
+		<p><i>
+			At <b>midnight</b>, the tranquility of the hotel was shattered. A loud crashing noise, as if something fragile had been violently smashed,
+			echoed through the corridors, follwed by a piercing, terrified scream. When hotel staff checked, they found a broken vase and an open window in Room 502.
+			<br>But the room was empty!
+		</i></p>
+		<hr>
+		
+		<h2>The Beginning and the Arrival of the Detective</h2>
+		<p>
+		Detective <b>Muriello Pasquale</b> had been staying at the hotel, seeking peace away from the chaotic world of crime-solving. But old habits
+		die hard. The moment he heard the commotion, he stepped into the corridor, ready to take charge of the "new investigation".<br>
+		He found the hotel manager, <b>Aprea Marco</b>, trembling as he led he way to room 502. The room's door was slightly open.
+		<br>
+		<ul>
+			<li> A broken vase</li>
+			<li> The window wide open, curtains swaying violenty in the cold wind</li>
+			<li> The guest's belongings were still neatly arranged, but there was no sign of the guest</li>
+		</p>
+		
+		
+		
+	</body>
+
+
+
+
+
+</html>
